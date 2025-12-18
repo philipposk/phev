@@ -1,0 +1,14 @@
+Analysis started: 2025-12-16 23:55:12 
+
+[STEP 1/4] Running individual vehicle-level EDS prediction analysis...
+This will predict EDS from vehicle characteristics using 26 clean variables.
+
+
+========================================
+INDIVIDUAL VEHICLE-LEVEL EDS ANALYSIS
+Predicting EDS from vehicle characteristics
+========================================
+
+
+=== STEP 1: Data Preparation ===
+Loaded 265603 PHEV records

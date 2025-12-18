@@ -1,0 +1,5 @@
+Model,R2,Method,Variables
+Linear (original),0.4465,LM,"3 (mass, aer, region)"
+Linear (with EDS),0.4638,LM,"4 (mass, aer, eds, region)"
+GAM,0.6133,GAM,6 variables
+Random Forest,0.7285,RF,10 variables

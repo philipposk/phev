@@ -1,0 +1,92 @@
+Analysis started: 2025-12-16 22:17:02 
+
+[STEP 1/2] Running EDS-focused country-level analysis...
+This will aggregate data at country level and analyze EDS patterns.
+
+
+=== EDS-FOCUSED COUNTRY-LEVEL ANALYSIS ===
+Using best Random Forest: mtry=10, ntree=1000, nodesize=5
+
+=== STEP 1: Loading Data ===
+Loaded 265603 PHEV records
+Loaded temperature data: 37 records
+Temperature columns: Country, aver_temp, rain, gasoline_price, GDP, mileage, max_speed, density_km2, Area_km2, Rural%, charge_points, PEVs, km_motorway, km_national, km_tot, perc_motorway, MS, GDPperCapita, Price2020, Region, Region2, Region_EuroVoc, pop_in_urban_%, pop_in_interm_%, pop_in_rural_% 
+
+=== STEP 2: Country-Level Aggregation ===
+Country-level data: 29 countries
+
+=== STEP 3: Merging Temperature Data ===
+Using temperature column: aver_temp 
+Temperature data merged for 0 countries
+
+=== STEP 4: Preparing Features for Best RF Model ===
+Country-level model data: 29 countries
+
+=== STEP 5: Loading/Training Best RF Model ===
+No saved model found, will train new model on country-level data
+Training RF model on country-level data...
+Trained RF model with 29 country-level records
+
+=== STEP 6: Country-Level Predictions and Analysis ===
+Country-level model performance:
+  R² = 0.9503 
+  RMSE = 0.6213 kWh/100 km
+
+=== STEP 7: EDS Sub-Category Analysis ===
+EDS categories by region:
+# A tibble: 5 × 6
+  eds_category        region   n_countries mean_eds mean_energy mean_temperature
+  <chr>               <chr>          <int>    <dbl>       <dbl>            <dbl>
+1 Medium EDS (20-50%) Central…           8     30.9        25.7              NaN
+2 Medium EDS (20-50%) Northern           7     32.5        22.4              NaN
+3 Medium EDS (20-50%) Other              2     26.8        22.7              NaN
+4 Medium EDS (20-50%) Southern           6     36.0        22.3              NaN
+5 Medium EDS (20-50%) Western            6     30.4        23.1              NaN
+
+=== STEP 8: Saving Results ===
+Results saved to tables/
+
+=== EDS-Focused Analysis Complete ===
+
+[STEP 2/2] Creating EDS-focused figures and maps...
+This will generate visualizations of EDS patterns by country and region.
+
+Note: Mapping packages not available. Will create non-map figures only.
+
+=== CREATING EDS-FOCUSED FIGURES ===
+Loaded country-level data: 29 countries
+
+Creating Figure 18: EDS by Country...
+Saved: figure18_eds_by_country.png
+
+Creating Figure 19: EDS Distribution by Region...
+Saved: figure19_eds_by_region.png
+
+Creating Figure 20: Energy vs EDS by Country...
+Saved: figure20_energy_vs_eds_country.png
+
+Creating Figure 21: EDS Categories by Region...
+Saved: figure21_eds_categories_region.png
+
+Skipping Figure 22: Insufficient temperature data
+
+Creating Figure 23: Regional Summary Comparison...
+Saved: figure23_regional_summary.png
+
+Creating Figure 24: High EDS Countries Analysis...
+Skipping Figure 24: No countries with EDS > 50%
+
+=== EDS Figure Generation Complete ===
+Created 5 new figures
+
+========================================
+EDS-FOCUSED ANALYSIS COMPLETE
+========================================
+
+Analysis completed: 2025-12-16 22:17:27 
+Results saved to:
+  - tables/country_level_eds_analysis.csv
+  - tables/eds_categories_by_region.csv
+  - tables/eds_regional_summary.csv
+  - figures/figure18-24_*.png
+

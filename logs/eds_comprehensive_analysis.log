@@ -1,0 +1,98 @@
+Analysis started: 2025-12-16 22:29:48 
+
+[STEP 1/2] Running comprehensive EDS-focused country-level analysis...
+This includes: descriptive statistics, regression, ANOVA, threshold analysis,
+model-specific analysis, battery analysis, segment analysis, time series,
+charging behavior, and north-south divide analysis.
+
+
+The downloaded binary packages are in
+	/var/folders/z2/2325qv9s7bvgdhpgyl5f763h0000gn/T//RtmpYd1maL/downloaded_packages
+Note: Mapping packages not available. Maps will be skipped.
+
+=== COMPREHENSIVE EDS-FOCUSED COUNTRY-LEVEL ANALYSIS ===
+
+=== STEP 1: Loading Data ===
+Loaded 265603 PHEV records
+Loaded temperature data: 37 records
+Temperature columns: Country, aver_temp, rain, gasoline_price, GDP, mileage, max_speed, density_km2, Area_km2, Rural%, charge_points, PEVs, km_motorway, km_national, km_tot, perc_motorway, MS, GDPperCapita, Price2020, Region, Region2, Region_EuroVoc, pop_in_urban_%, pop_in_interm_%, pop_in_rural_% 
+
+=== STEP 2: Descriptive Statistics (Country-Level) ===
+Country-level statistics calculated for 29 countries
+
+=== STEP 3: Merging Temperature Data ===
+Using country column: MS , temperature column: aver_temp 
+Temperature data merged for 29 countries
+
+=== STEP 4: Country-Level Regression ===
+Fitting country-level regression model...
+Model 1 R²: 0.5249 
+Model 2 (with temperature) R²: 0.5476 
+Model 3 (with interactions) R²: 0.5613 
+
+=== STEP 5: Regional Comparisons (ANOVA/T-Tests) ===
+ANOVA: EDS by region
+            Df Sum Sq Mean Sq F value Pr(>F)
+region       4  174.3   43.57   2.127  0.109
+Residuals   24  491.7   20.49               
+
+Pairwise t-tests between regions:
+           region1         region2    mean1    mean2    p_value significant
+1          Western Central_Eastern 30.41520 30.88501 0.63947765       FALSE
+2          Western        Southern 30.41520 35.96487 0.16797822       FALSE
+3          Western        Northern 30.41520 32.45749 0.19688165       FALSE
+4          Western           Other 30.41520 26.82304 0.36645593       FALSE
+5  Central_Eastern        Southern 30.88501 35.96487 0.20453087       FALSE
+6  Central_Eastern        Northern 30.88501 32.45749 0.35382911       FALSE
+7  Central_Eastern           Other 30.88501 26.82304 0.31339933       FALSE
+8         Southern        Northern 35.96487 32.45749 0.37624316       FALSE
+9         Southern           Other 35.96487 26.82304 0.07950952       FALSE
+10        Northern           Other 32.45749 26.82304 0.19581734       FALSE
+
+=== STEP 6: EDS Threshold Analysis ===
+EDS threshold analysis (50% threshold):
+# A tibble: 15 × 7
+   eds_threshold_50 region n_vehicles mean_eds mean_energy mean_battery mean_aer
+   <chr>            <chr>       <int>    <dbl>       <dbl>        <dbl>    <dbl>
+ 1 High (>50%)      Centr…       1385    62.2         22.5         14.5     65.8
+ 2 High (>50%)      North…       7488    62.2         20.3         13.6     62.8
+ 3 High (>50%)      Other        1027    62.7         20.5         14.7     72.0
+ 4 High (>50%)      South…       7618    63.1         19.2         13.4     59.1
+ 5 High (>50%)      Weste…      31185    62.5         20.8         14.1     65.4
+ 6 Low (<20%)       Centr…       2640    10.5         27.0         13.1     55.8
+ 7 Low (<20%)       North…      11639     9.74        22.0         12.2     57.9
+ 8 Low (<20%)       Other        2106     6.89        20.2         12.8     63.1
+ 9 Low (<20%)       South…      15869     8.82        23.7         13.1     54.3
+10 Low (<20%)       Weste…      61951    10.0         24.2         13.0     60.7
+11 Medium           Centr…       3845    33.7         24.8         14.0     62.6
+12 Medium           North…      17091    34.5         21.4         12.9     59.4
+13 Medium           Other        1668    34.9         21.2         13.9     65.2
+14 Medium           South…      15720    34.1         21.7         13.4     57.6
+15 Medium           Weste…      79011    33.8         22.8         13.8     62.7
+
+=== STEP 7: Model-Specific Analysis ===
+Top 20 models by vehicle count (same mass/AER):
+# A tibble: 20 × 10
+   Model       mass   aer n_vehicles mean_eds sd_eds mean_energy min_eds max_eds
+   <chr>      <dbl> <dbl>      <int>    <dbl>  <dbl>       <dbl>   <dbl>   <dbl>
+ 1 MAZDA CX-…  2245    63       8942     33.2   17.6        29.7  0.463     92.3
+ 2 TOYOTA RA…  2162    75       5507     39.1   23.4        17.6  0         95.7
+ 3 KUGA        1997    56       3998     37.6   21.0        17.9  0         97.8
+ 4 MG EHS PL…  1923    52       3603     16.9   18.6        22.9  0.0650    86.4
+ 5 KUGA        1997    72       3600     40.3   21.2        18.8  0.0212    96.1
+ 6 SPORTAGE    2081    70       3207     29.1   16.5        20.8  0.108     97.3
+ 7 KUGA        1926    71       2451     34.6   22.4        19.4  0.0541    94.0
+ 8 KUGA        1943    71       1737     39.9   21.1        19.3  0.181     93.4
+ 9 WRANGLER …  2519    44       1559     18.2   17.7        30.7  0         85.6
+10 CEED        1745    50       1367     28.0   21.5        13.2  0         84.7
+11 CX-60       2245    63       1306     31.5   16.5        29.2  0.911     82.5
+12 3008        1929    62       1245     36.0   18.2        19.2  0.144     91.2
+13 XCEED       1746    42       1135     30.1   22.6        14.5  0.0681    98.0
+14 WRANGLER …  2602    45       1059     17.2   17.4        34.0  0         79.5
+15 KUGA        1926    64       1055     34.6   22.2        17.8  0.0325    91.9
+16 MG RX6 PL…  1923    52       1048     24.4   17.5        21.9  0.595     87.3
+17 COMPASS     2043    47        940     14.9   18.5        21.7  0         94.4
+18 KUGA        1943    63        873     37.8   21.5        17.5  0.649     91.0
+19 SORENTO     2271    57        847     26.1   16.1        22.5  0.146     92.5
+20 KUGA        1935    71        836     38.4   20.6        19.8  0.0905    87.5
+# ℹ 1 more variable: eds_range <dbl>

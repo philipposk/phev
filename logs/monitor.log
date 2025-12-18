@@ -1,0 +1,95 @@
+Monitoring script: 09g_all_models_CLEAN_variables.R
+Checking every 60 seconds...
+Notifications: Only on step changes + completion
+Started at: Tue Dec 16 23:57:40 +07 2025
+[23:57:40] Script still running... (checking log for progress)
+  Latest: Training Random Forest...
+  >>> Step changed! Notified: Step 2/5: Random Forest
+[23:58:40] Script still running... (checking log for progress)
+  Latest: Training Random Forest...
+[23:59:40] Script still running... (checking log for progress)
+  Latest: Training Random Forest...
+[00:00:40] Script still running... (checking log for progress)
+  Latest: Training Random Forest...
+[00:01:40] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+  >>> Step changed! Notified: Step 3/5: XGBoost/GBM
+[00:02:40] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:03:40] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:04:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:05:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:06:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:07:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:08:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:09:41] Script still running... (checking log for progress)
+  Latest: Training XGBoost (GBM)...
+[00:10:41] Script still running... (checking log for progress)
+  Latest: Fitting GAM with formula...
+  >>> Step changed! Notified: Step 4/5: GAM
+[00:11:41] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+  >>> Step changed! Notified: Step 5/5: Neural Network
+[00:12:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:13:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:14:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:15:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:16:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:17:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:18:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:19:42] Script still running... (checking log for progress)
+  Latest: Training Neural Network...
+[00:20:42] Script still running... (checking log for progress)
+  Latest: Results saved to: tables/model_comparison_CLEAN_variables.csv
+  >>> Step changed! Notified: Finalizing...
+
+==========================================
+SCRIPT COMPLETED SUCCESSFULLY!
+==========================================
+Finished at: Wed Dec 17 00:21:42 +07 2025
+Results file: tables/model_comparison_CLEAN_variables.csv
+
+Last 20 lines of log:
+
+Summary:
+           Model                    Variables   Train_R2   Test_R2 Test_Adj_R2
+1  Random Forest 26 clean (excludes circular)  0.7726774 0.7162716   0.7161131
+2    XGBoost/GBM 26 clean (excludes circular)  0.7483612 0.7370855   0.7369386
+3            GAM 26 clean (excludes circular) -0.2469435 0.6430577   0.6429986
+4 Neural Network 26 clean (excludes circular)  0.7205732 0.7322184   0.7320688
+  Test_RMSE Test_MAE Test_MAPE
+1  3.083907 2.130209  9.709346
+2  2.968638 2.044082  9.369810
+3  3.458987 2.475347 11.784269
+4  2.995989 2.086671  9.573907
+                                                      Params_Source
+1                 44-variable run (mtry=10, ntree=1000, nodesize=5)
+2 44-variable run (n.trees=1500, depth=8, shrinkage=0.05, minobs=5)
+3                                            44-variable run (k=12)
+4                             44-variable run (size=20, decay=0.01)
+
+NOTE: These models use best parameters from 44-variable runs.
+This approach is documented in the methodology section.
+
+<string>:1: SyntaxWarning: "\$" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\$"? A raw string is also an option.
+ERROR: Gmail app password not found.
+To enable email notifications:
+1. Enable 2-factor authentication on Gmail
+2. Generate app password: https://myaccount.google.com/apppasswords
+3. Set environment variable: export GMAIL_APP_PASSWORD='your-password'
+   OR create file: ~/.gmail_app_password with the password
+./check_and_notify_when_done.sh: line 167: syntax error near unexpected token `('
+./check_and_notify_when_done.sh: line 167: `tion \"$NOTIFICATION_MSG\" with title \"R Script Progress (26 clean vars)\" sound name \"Glass\"" 2>/dev/null'

@@ -1,0 +1,5 @@
+Model,Train_R2,Test_R2,Test_RMSE
+Linear (original),0.4465,NA,NA
+GAM (improved),0.6173,0.6114,3.633
+Random Forest (tuned),0.7216,0.7156,3.1082
+XGBoost,NA,0.6891,3.2617

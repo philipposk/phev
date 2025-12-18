@@ -1,0 +1,9 @@
+variable,f_stat
+s(aer),433.22220780604397
+s(battery_capacity),380.09375458138794
+s(battery_to_weight),201.7946108571076
+s(mass),124.28054677309778
+s(eds),78.77087110146869
+s(engine_power),75.16243904285275
+s(power_to_weight),59.18274697582743
+s(eds_aer_interaction),51.796004284683974

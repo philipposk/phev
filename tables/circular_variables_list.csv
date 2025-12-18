@@ -1,0 +1,27 @@
+Variable,Reason
+EnTot,Direct component of total_energy
+EnTot100km,Direct component of total_energy
+EnEl,Direct component of total_energy
+EnICE,Direct component of total_energy
+EnEl100km,Direct component of total_energy
+EnICE100km,Direct component of total_energy
+electric_energy,Direct component of total_energy
+ice_energy,Direct component of total_energy
+EDSen,Energy-based EDS (calculated from energy)
+RW_FC,Derived from real-world fuel/energy
+RW_CO2,Derived from real-world fuel/energy
+RW_EC,Derived from real-world fuel/energy
+RW_OVC,Derived from real-world fuel/energy
+gap,Gap variables (derived from RW values)
+gap%,Gap variables (derived from RW values)
+co2_gap,Gap variables (derived from RW values)
+Mileage_Tot,Mileage used in energy calculation
+Mileage_CD_Eng_Off,Mileage used in energy calculation
+Mileage_CD_Eng_On,Mileage used in energy calculation
+Mileage_CI,Mileage used in energy calculation
+Mileage_CS,Mileage used in energy calculation
+FC_Tot,Fuel consumption (directly related to energy)
+FC_CD,Fuel consumption (directly related to energy)
+FC_CI,Fuel consumption (directly related to energy)
+FC_CS,Fuel consumption (directly related to energy)
+EnergyIntoBattery_kWh,Component of EnEl calculation

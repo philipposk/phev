@@ -1,0 +1,4 @@
+variable,lmg_contribution,lmg_percent,lmg_lower_ci,lmg_upper_ci
+mass,0.9751412518045937,97.51412518045936,NA,NA
+aer,0.014063976552619779,1.406397655261978,NA,NA
+region_numeric,0.01079477164278666,1.079477164278666,NA,NA
